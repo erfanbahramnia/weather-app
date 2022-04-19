@@ -16,15 +16,13 @@
     
     <div class="container"><!-- image container -->
         <div class="weather-inf">
-            <img src="" alt="" class="cloud-image">
-            <div><!-- city weather -->
-                <h1 id="metric"></h1><!-- for showing metrig -->
-                <div><!-- city name & time -->
-                    <h2 id="city-name"></h2><!-- city name -->
+            <div class="absolute-div"><!-- city weather -->
+                <h1 id="metric">16</h1><!-- for showing metrig -->
+                <div class="name-time"><!-- city name & time -->
+                    <h2 id="city-name">London</h2><!-- city name -->
                     <p id="time">
-                        <span id="clock"></span>-
-                        <span id="day"></span>,
-                        <span id="date"></span>
+                        <span id="clock">06:09</span>-<span id="day">Monday</span>,
+                        <span id="date">9Sep '19</span>
                     </p>
                 </div>
                 <div></div><!-- weather icon -->
@@ -32,26 +30,31 @@
         </div>
         <div class="search-details">
             <div class="search">
-                <input type="text">
-                <button>
+                <input type="text" placeholder="AnotherLocation">
+                <button id="search-bottom">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
-            <div class="privios-cities"></div>
+            <div class="privios-cities">
+                <p class="city-names">Biminghan</p>
+                <p class="city-names">Manchester</p>
+                <p class="city-names">New York</p>
+                <p class="city-names">California</p>
+            </div>
             <div class="datails">
                 <p id="weather-datails">Weather Details</p>
                 <div id="more-inf">
-                    <div id="cloudy">
+                    <div class="more-details">
                         <p class="detail">Cloudy</p>
-                        <p class="nums"></p>
+                        <p class="nums">86%</p>
                     </div>
-                    <div id="humidity">
+                    <div class="more-details">
                         <p class="detail">Humidity</p>
-                        <p class="nums"></p>
+                        <p class="nums">62%</p>
                     </div>
-                    <div id="wind">
+                    <div class="more-details">
                         <p class="detail">Wind</p>
-                        <p class="nums"></p>
+                        <p class="nums">81km/h</p>
                     </div>
                 </div>
             </div>
