@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link for css -->
     <link rel="stylesheet" href="./style.css">
+    <!-- link for fontawesome -->
+    <link rel="stylesheet" href="./css/all.css">
     <!-- link for favicon -->
-
+    <link rel="icon" type="images/x-icon" href="./images/weather-favicon.png">
     <title>Weather App</title>
 </head>
 <body>
@@ -19,8 +21,8 @@
                 <h1 id="metric"></h1><!-- for showing metrig -->
                 <div><!-- city name & time -->
                     <h2 id="city-name"></h2><!-- city name -->
-                    <p>
-                        <span id="time"></span>-
+                    <p id="time">
+                        <span id="clock"></span>-
                         <span id="day"></span>,
                         <span id="date"></span>
                     </p>
@@ -28,7 +30,32 @@
                 <div></div><!-- weather icon -->
             </div>
         </div>
-        <div></div>
+        <div class="search-details">
+            <div class="search">
+                <input type="text">
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="privios-cities"></div>
+            <div class="datails">
+                <p id="weather-datails">Weather Details</p>
+                <div id="more-inf">
+                    <div id="cloudy">
+                        <p class="detail">Cloudy</p>
+                        <p class="nums"></p>
+                    </div>
+                    <div id="humidity">
+                        <p class="detail">Humidity</p>
+                        <p class="nums"></p>
+                    </div>
+                    <div id="wind">
+                        <p class="detail">Wind</p>
+                        <p class="nums"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="./script.js"></script>
