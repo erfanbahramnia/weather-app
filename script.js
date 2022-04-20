@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", priviosCitiesShow)
+
+
 const townName = document.querySelector("#city-name");
 // weather details section in app
 const temp = document.querySelector("#metric");
@@ -11,6 +14,7 @@ const search = document.querySelector("input");
 const day = document.querySelector("#day")
 const date = document.querySelector("#date")
 
+// when click on button geting data from api
 searchBotton.addEventListener("click", cityName => {
     cityName = search.value;
     // get data from api
@@ -21,7 +25,7 @@ searchBotton.addEventListener("click", cityName => {
     search.value = "";
 })
 
-
+// taking data from api and show in html file
 function callApi(city) {
     const cityName = city;
     const apiKey = "0c785bb1b3c3a84ff730f463a9c8c710"
@@ -45,7 +49,7 @@ function callApi(city) {
         .catch(search.placeholder = "enter valid city")
 }
 
-
+// show current date & time
 const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 setInterval(() => {
@@ -55,6 +59,8 @@ setInterval(() => {
 }, 1000);
 
 
+// saving privios city name to access another time 
+// and prevent to searching again
 function saveLocalStorage(newCity) {
     let cities;
     if (localStorage.getItem("cities") === null) {
@@ -69,4 +75,20 @@ function saveLocalStorage(newCity) {
         localStorage.setItem("cities", JSON.stringify(cities))
     }
 
+}
+
+// privios city section in html file
+const priviosCities = document.querySelector(".privios-cities")
+
+function priviosCitiesShow () {
+
+    if (localStorage.getItem("cities") !== null) {
+        cities = JSON.parse(localStorage.getItem("cities"));
+        cities.forEach(element => {
+            const p = document.createElement("p");
+            p.className = "city-names";
+            p.innerText = element;
+            priviosCities.appendChild(p);
+        });
+    }
 }
