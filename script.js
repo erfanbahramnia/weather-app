@@ -7,9 +7,6 @@ function callApi(city) {
             // get important information from api
             const {weather, main, wind, clouds, name} = json;
 
-            const data = {weather, main, wind, clouds, name};
-            localStorage.setItem(city, JSON.stringify(data))
-            console.log(data)
         });
 }
 
