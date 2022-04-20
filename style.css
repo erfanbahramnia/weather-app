@@ -147,5 +147,15 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 130px;
+    min-height: 100px;
+    max-height: 130px;
+    overflow: auto;
 }
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(57, 37, 88, 0.54); 
+  }
