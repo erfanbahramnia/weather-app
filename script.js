@@ -14,6 +14,17 @@ const search = document.querySelector("input");
 const day = document.querySelector("#day")
 const date = document.querySelector("#date")
 
+// privios city section in html file
+const priviosCities = document.querySelector(".privios-cities")
+
+// when click on cities show the weather of them
+priviosCities.addEventListener("click", event => {
+    // city name
+    const cityName = event.target.innerText;
+    // get api for taking data and show it
+    callApi(cityName)
+})
+
 // when click on button geting data from api
 searchBotton.addEventListener("click", cityName => {
     cityName = search.value;
@@ -77,8 +88,6 @@ function saveLocalStorage(newCity) {
 
 }
 
-// privios city section in html file
-const priviosCities = document.querySelector(".privios-cities")
 
 function priviosCitiesShow () {
 
