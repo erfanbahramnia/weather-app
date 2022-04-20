@@ -50,4 +50,4 @@ setInterval(() => {
     const currentDate = new Date();
     day.innerText = days[currentDate.getDay()]; 
     date.innerText = `${currentDate.getDate()} ${months[currentDate.getMonth()]}`;
-}, 1000000);
+}, 1000);
