@@ -13,8 +13,10 @@ const date = document.querySelector("#date")
 
 searchBotton.addEventListener("click", cityName => {
     cityName = search.value;
+    // get data from api
     callApi(cityName);
-
+    // save city name if it is first time
+    saveLocalStorage(cityName)
     // after searching the value of input must clean
     search.value = "";
 })
@@ -51,3 +53,20 @@ setInterval(() => {
     day.innerText = days[currentDate.getDay()]; 
     date.innerText = `${currentDate.getDate()} ${months[currentDate.getMonth()]}`;
 }, 1000);
+
+
+function saveLocalStorage(newCity) {
+    let cities;
+    if (localStorage.getItem("cities") === null) {
+        cities = [];
+    }
+    else {
+        cities = JSON.parse(localStorage.getItem("cities"));
+    }
+    
+    if (!(cities.includes(newCity))) {
+        cities.push(newCity);
+        localStorage.setItem("cities", JSON.stringify(cities))
+    }
+
+}
